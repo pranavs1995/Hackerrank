@@ -1,0 +1,31 @@
+#Problem Statement : https://www.hackerrank.com/challenges/append-and-delete/problem
+
+#!/bin/python3
+
+import sys
+
+
+#s = input().strip()
+#t = input().strip()
+#k = int(input().strip())
+i=0
+
+if(k > len(s)+len(t)):
+    flag=1
+else:
+    while((i<len(s)) and (i<len(t))):
+        if(s[i]==t[i]):
+            i+=1
+        else:
+            break
+    extra=k-(len(s)-i)-(len(t)-i)
+    if(extra<=k and extra%2==0 and extra>=0):
+        flag=1
+    else:
+        flag=0
+
+if flag:
+    print("Yes")
+else:
+    print("No")
+    
